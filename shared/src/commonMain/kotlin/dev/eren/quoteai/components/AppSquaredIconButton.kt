@@ -2,6 +2,7 @@ package dev.eren.quoteai.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.IconButton
@@ -17,7 +18,7 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 fun AppSquaredIconButton(
-    icon: @Composable () -> Unit,
+    icon: @Composable RowScope.() -> Unit,
     onClick: () -> Unit
 ) {
     Button(

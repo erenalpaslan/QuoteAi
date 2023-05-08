@@ -13,11 +13,13 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun AppButton(
     onClick: () -> Unit,
+    enabled: Boolean = true,
     content: @Composable RowScope.() -> Unit
 ) {
     Button(
         onClick = onClick,
-        shape = MaterialTheme.shapes.medium
+        shape = MaterialTheme.shapes.medium,
+        enabled = enabled
     ) {
         content()
     }

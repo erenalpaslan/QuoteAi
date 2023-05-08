@@ -39,6 +39,8 @@ kotlin {
                 implementation(libs.koin.core)
                 implementation(libs.voyager.navigator)
                 implementation(libs.voyager.koin)
+
+                implementation(libs.multiplatform.settings)
             }
         }
         val commonTest by getting {
@@ -72,6 +74,11 @@ kotlin {
 android {
     namespace = "dev.eren.quoteai"
     compileSdk = 33
+
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+    sourceSets["main"].res.srcDirs("src/androidMain/res")
+    sourceSets["main"].resources.srcDirs("src/commonMain/resources")
+
     defaultConfig {
         minSdk = 24
         targetSdk = 33

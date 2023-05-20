@@ -26,6 +26,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                //compose
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)
@@ -35,7 +36,7 @@ kotlin {
                 implementation(compose.components.resources)
                 implementation(compose.materialIconsExtended)
 
-
+                //Others
                 implementation(libs.koin.core)
                 implementation(libs.voyager.navigator)
                 implementation(libs.voyager.koin)

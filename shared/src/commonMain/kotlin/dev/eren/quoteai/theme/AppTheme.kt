@@ -34,7 +34,8 @@ fun AppTheme(
             onSecondary = black,
             onBackground = white,
             onSurface = white,
-            onError = white
+            onError = white,
+            outlineVariant = black
         )
     } else {
         lightColorScheme(

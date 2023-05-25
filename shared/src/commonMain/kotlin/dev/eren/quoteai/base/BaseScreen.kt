@@ -13,15 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
-import com.moriatsushi.insetsx.ExperimentalSoftwareKeyboardApi
-import com.moriatsushi.insetsx.safeDrawingPadding
-import com.moriatsushi.insetsx.systemBarsPadding
 import org.koin.core.component.KoinComponent
-import org.koin.core.component.get
-import org.koin.core.component.inject
 
 /**
  * Created by erenalpaslan on 7.05.2023

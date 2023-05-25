@@ -9,8 +9,6 @@ import dev.eren.quoteai.view.MainApp
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-
         setContent {
             MainApp()
         }

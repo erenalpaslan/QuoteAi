@@ -1,7 +1,18 @@
 package dev.eren.quoteai.view
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.Navigator
+import com.moriatsushi.insetsx.ExperimentalSoftwareKeyboardApi
+import com.moriatsushi.insetsx.SystemBarsBehavior
+import com.moriatsushi.insetsx.rememberWindowInsetsController
+import com.moriatsushi.insetsx.systemBarsPadding
 import dev.eren.quoteai.theme.AppTheme
 import dev.eren.quoteai.view.splash.SplashScreen
 

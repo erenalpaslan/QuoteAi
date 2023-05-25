@@ -1,6 +1,7 @@
 package dev.eren.quoteai.di
 
 import dev.eren.quoteai.view.home.homeModule
+import dev.eren.quoteai.view.onboarding.onBoardingModule
 import dev.eren.quoteai.view.persona.personaModule
 import dev.eren.quoteai.view.profile.profileModule
 import dev.eren.quoteai.view.splash.splashModule
@@ -16,4 +17,5 @@ val appModules = module {
     includes(homeModule)
     includes(themesModule)
     includes(profileModule)
+    includes(onBoardingModule)
 }

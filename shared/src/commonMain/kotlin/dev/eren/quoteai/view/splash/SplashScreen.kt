@@ -14,6 +14,7 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import dev.eren.quoteai.base.BaseScreen
 import dev.eren.quoteai.view.home.HomeScreen
+import dev.eren.quoteai.view.onboarding.OnBoardingScreen
 import dev.eren.quoteai.view.persona.PersonaScreen
 import kotlinx.coroutines.delay
 import org.koin.core.component.inject
@@ -33,7 +34,7 @@ class SplashScreen : BaseScreen<SplashViewModel>() {
         LaunchedEffect(Unit) {
             delay(2_000)
             if (viewModel.isFirstLogin()) {
-                navigator.replaceAll(PersonaScreen())
+                navigator.replaceAll(OnBoardingScreen())
             }else {
                 navigator.replaceAll(HomeScreen())
             }

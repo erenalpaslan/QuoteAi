@@ -40,6 +40,7 @@ kotlin {
                 implementation(libs.koin.core)
                 implementation(libs.voyager.navigator)
                 implementation(libs.voyager.koin)
+                implementation(libs.multiplatform.insetx)
 
                 implementation(libs.multiplatform.settings)
             }

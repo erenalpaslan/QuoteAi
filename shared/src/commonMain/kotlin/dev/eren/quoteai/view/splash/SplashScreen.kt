@@ -32,11 +32,10 @@ class SplashScreen : BaseScreen<SplashViewModel>() {
         val navigator = LocalNavigator.currentOrThrow
 
         LaunchedEffect(Unit) {
-            delay(2_000)
-            if (viewModel.isFirstLogin()) {
-                navigator.replaceAll(OnBoardingScreen())
-            }else {
-                navigator.replaceAll(HomeScreen())
+            when(viewModel.whereToNavigate()) {
+                OnBoardingScreen::class -> navigator.replaceAll(OnBoardingScreen())
+                PersonaScreen::class -> navigator.replaceAll(PersonaScreen())
+                else -> navigator.replaceAll(HomeScreen())
             }
         }
 

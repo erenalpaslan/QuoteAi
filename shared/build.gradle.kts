@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("org.jetbrains.compose")
+    alias(libs.plugins.io.realm.kotlin)
 }
 
 kotlin {
@@ -43,6 +44,9 @@ kotlin {
                 implementation(libs.multiplatform.insetx)
 
                 implementation(libs.multiplatform.settings)
+                implementation(libs.multiplatform.settings.serialization)
+                implementation(libs.json.serialization)
+                implementation(libs.realm.base)
             }
         }
         val commonTest by getting {

@@ -11,7 +11,7 @@ import dev.eren.quoteai.utils.settings
 class OnBoardingViewModel: BaseViewModel() {
 
     fun onGetStartedClicked() {
-        settings[SettingKeys.IS_FIRST_LOGIN] = false
+        settings[SettingKeys.GET_STARTED] = true
     }
 
 }

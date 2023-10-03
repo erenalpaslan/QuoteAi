@@ -13,6 +13,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -31,10 +32,20 @@ import org.jetbrains.compose.resources.painterResource
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalResourceApi::class)
 @Composable
 fun PersonaSelectionContent(
-    onNextClicked: () -> Unit
+    uiState: PersonaUiState,
+    onNextClicked: (String) -> Unit
 ) {
     var selectedPersonaIndex by remember {
         mutableStateOf(-1)
+    }
+
+    LaunchedEffect(uiState) {
+        when(uiState) {
+            is PersonaUiState.OnDataLoaded -> {
+                selectedPersonaIndex = uiState.selectedIndex
+            }
+            else -> {}
+        }
     }
 
     Scaffold(
@@ -45,7 +56,7 @@ fun PersonaSelectionContent(
                 },
                 actions = {
                     AppButton(
-                        onClick = onNextClicked,
+                        onClick = { onNextClicked(selectedPersonaIndex.toString()) },
                         enabled = selectedPersonaIndex != -1
                     ) {
                         Text("Next")
@@ -59,18 +70,24 @@ fun PersonaSelectionContent(
             Text("Choose a persona", style = MaterialTheme.typography.titleLarge)
             Text("Tap the persona which you feel best represent you")
             Spacer(Modifier.height(16.dp))
-            LazyVerticalGrid(
-                columns = GridCells.Fixed(2)
-            ) {
-                items(10) {
-                    PersonaSelectionItem(
-                        onClick = {
-                            selectedPersonaIndex = it
-                        },
-                        title = "Item: $it",
-                        selected = selectedPersonaIndex == it
-                    )
+            when(uiState) {
+                is PersonaUiState.OnDataLoaded -> {
+                    LazyVerticalGrid(
+                        columns = GridCells.Fixed(2)
+                    ) {
+                        items(10) { count ->
+                            PersonaSelectionItem(
+                                onClick = {
+                                    selectedPersonaIndex = count
+                                },
+                                title = "Item: $count",
+                                selected = selectedPersonaIndex == count
+                            )
+                        }
+                    }
                 }
+
+                else -> {}
             }
         }
     }

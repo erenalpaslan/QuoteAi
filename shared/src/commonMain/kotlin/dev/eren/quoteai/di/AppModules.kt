@@ -1,5 +1,7 @@
 package dev.eren.quoteai.di
 
+import dev.eren.quoteai.data.database.realmModule
+import dev.eren.quoteai.data.repositoryModule
 import dev.eren.quoteai.view.home.homeModule
 import dev.eren.quoteai.view.onboarding.onBoardingModule
 import dev.eren.quoteai.view.persona.personaModule
@@ -18,4 +20,6 @@ val appModules = module {
     includes(themesModule)
     includes(profileModule)
     includes(onBoardingModule)
+    includes(realmModule)
+    includes(repositoryModule)
 }

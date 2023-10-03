@@ -24,6 +24,7 @@ import dev.eren.quoteai.base.BaseScreen
 import dev.eren.quoteai.common.Drawables
 import dev.eren.quoteai.common.Strings
 import dev.eren.quoteai.view.home.HomeScreen
+import dev.eren.quoteai.view.persona.PersonaScreen
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.koin.core.component.inject
@@ -70,7 +71,7 @@ class OnBoardingScreen : BaseScreen<OnBoardingViewModel>() {
                     Button(
                         onClick = {
                             viewModel.onGetStartedClicked()
-                            navigator.replaceAll(HomeScreen())
+                            navigator.replaceAll(PersonaScreen())
                         },
                         modifier = Modifier.fillMaxWidth()
                             .align(Alignment.BottomCenter)

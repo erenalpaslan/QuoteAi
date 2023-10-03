@@ -1,7 +1,7 @@
 [versions]
 com-android-application = "8.0.1"
 org-jetbrains-kotlin-android = "1.8.0"
-core-ktx = "1.10.0"
+core-ktx = "1.10.1"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
@@ -11,6 +11,8 @@ voyager = "1.0.0-rc05"
 settings = "1.0.0"
 accompanist-systemui = "0.31.2-alpha"
 insetx = "0.1.0-alpha06"
+realm-kotlin = "1.8.0"
+serialization = "1.5.1"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -23,11 +25,15 @@ koin-android = {group = "io.insert-koin", name = "koin-android", version.ref="ko
 voyager-koin = {group = "cafe.adriel.voyager", name = "voyager-koin", version.ref="voyager"}
 voyager-navigator = {group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref="voyager"}
 multiplatform-settings = { group = "com.russhwolf", name = "multiplatform-settings-no-arg", version.ref = "settings"}
+multiplatform-settings-serialization = {group = "com.russhwolf", name = "multiplatform-settings-serialization", version.ref = "settings"}
 multiplatform-insetx = {group = "com.moriatsushi.insetsx", name = "insetsx", version.ref = "insetx"}
+realm-base = {group = "io.realm.kotlin", name = "library-base", version.ref = "realm-kotlin"}
+json-serialization = {group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization"}
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "com-android-application" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+io-realm-kotlin = {id = "io.realm.kotlin", version.ref = "realm-kotlin"}
 
 [bundles]
 
